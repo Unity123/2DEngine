@@ -22,6 +22,11 @@ Sprite::~Sprite()
 {
 }
 
+string Sprite::Name()
+{
+	return "Sprite";
+}
+
 void Sprite::Draw() {
 	SDL_RenderCopyEx(rnd, img, NULL, &position, rotation, NULL, flip);
 }

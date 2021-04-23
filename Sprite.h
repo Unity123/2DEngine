@@ -10,6 +10,7 @@ public:
 	Sprite(SDL_Texture* image, SDL_Renderer* render, SDL_Rect position);
 	Sprite(string path, SDL_Renderer* render, SDL_Rect position);
 	~Sprite();
+	string Name();
 	void Draw();
 	SDL_Texture* img;
 	SDL_Renderer* rnd;
