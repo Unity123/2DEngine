@@ -3,6 +3,8 @@
 class EXPORT ForceSprite : public CollisionSprite
 {
 public:
+	ForceSprite(SDL_Texture* image, SDL_Renderer* render, SDL_Rect position);
+	ForceSprite(char* path, SDL_Renderer* render, SDL_Rect position);
 	string Name();
 	void AddForce(float x, float y);
 	float velocityX = 0;

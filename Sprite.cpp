@@ -4,6 +4,10 @@
 
 
 
+Sprite::Sprite()
+{
+}
+
 Sprite::Sprite(SDL_Texture * image, SDL_Renderer* render, SDL_Rect position)
 {
 	this->img = image;

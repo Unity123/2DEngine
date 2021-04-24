@@ -6,6 +6,7 @@ using namespace std;
 class EXPORT Sprite : public Object
 {
 public:
+	Sprite();
 	Sprite(SDL_Texture* image, SDL_Renderer* render, SDL_Rect position);
 	Sprite(char* path, SDL_Renderer* render, SDL_Rect position);
 	~Sprite();

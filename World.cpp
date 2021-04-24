@@ -1,5 +1,9 @@
 #include "World.h"
 
+World::World()
+{
+}
+
 string World::Name()
 {
 	return "World";

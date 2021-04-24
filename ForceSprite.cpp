@@ -1,5 +1,19 @@
 #include "ForceSprite.h"
 
+ForceSprite::ForceSprite(SDL_Texture * image, SDL_Renderer* render, SDL_Rect position)
+{
+	this->img = image;
+	this->rnd = render;
+	this->position = position;
+}
+
+ForceSprite::ForceSprite(char* path, SDL_Renderer* render, SDL_Rect position)
+{
+	this->img = IMG_LoadTexture(render, path);
+	this->rnd = render;
+	this->position = position;
+}
+
 string ForceSprite::Name()
 {
 	return "ForceSprite";
