@@ -1,5 +1,6 @@
 #pragma once
 #include "World.h"
+#include <SDL_mixer.h>
 class EXPORT Game
 {
 public:
