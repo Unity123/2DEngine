@@ -1,10 +1,9 @@
 #pragma once
 #include <SDL.h>
 #include <SDL_image.h>
-#include <string>
 #include "Object.h"
 using namespace std;
-class Sprite : Object
+class Sprite : public Object
 {
 public:
 	Sprite(SDL_Texture* image, SDL_Renderer* render, SDL_Rect position);
@@ -18,4 +17,3 @@ public:
 	float rotation;
 	SDL_RendererFlip flip;
 };
-
