@@ -7,14 +7,14 @@ class EXPORT Sprite : public Object
 {
 public:
 	Sprite();
-	Sprite(SDL_Texture* image, SDL_Renderer* render, SDL_Rect position);
-	Sprite(char* path, SDL_Renderer* render, SDL_Rect position);
+	Sprite(SDL_Texture* image, SDL_Renderer* render, SDL_FRect position);
+	Sprite(char* path, SDL_Renderer* render, SDL_FRect position);
 	~Sprite();
 	string Name();
 	void Draw();
 	SDL_Texture* img;
 	SDL_Renderer* rnd;
-	SDL_Rect position;
+	SDL_FRect position;
 	float rotation;
 	SDL_RendererFlip flip;
 };

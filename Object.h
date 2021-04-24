@@ -12,7 +12,7 @@ class EXPORT Object
 public:
 	Object();
 	~Object();
-	string Name();
+	virtual string Name();
 	vector<Object*> children;
 	Object* parent;
 };

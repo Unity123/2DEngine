@@ -1,13 +1,13 @@
 #include "ForceSprite.h"
 
-ForceSprite::ForceSprite(SDL_Texture * image, SDL_Renderer* render, SDL_Rect position)
+ForceSprite::ForceSprite(SDL_Texture * image, SDL_Renderer* render, SDL_FRect position)
 {
 	this->img = image;
 	this->rnd = render;
 	this->position = position;
 }
 
-ForceSprite::ForceSprite(char* path, SDL_Renderer* render, SDL_Rect position)
+ForceSprite::ForceSprite(char* path, SDL_Renderer* render, SDL_FRect position)
 {
 	this->img = IMG_LoadTexture(render, path);
 	this->rnd = render;
@@ -39,11 +39,11 @@ void ForceSprite::PhysicsProcess()
 	}
 	this->position.x += this->velocityX;
 	this->position.y += this->velocityY;
-	this->velocityX -= 5;
+	this->velocityX *= 0.75f;
 	if (this->useGravity) {
-		this->velocityY -= 9.81f;
+		this->velocityY -= 0.981f;
 	}
 	else {
-		this->velocityY -= 5;
+		this->velocityY *= 0.75f;
 	}
 }

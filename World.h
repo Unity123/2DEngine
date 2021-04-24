@@ -1,5 +1,6 @@
 #pragma once
 #include "ForceSprite.h"
+#include "AudioSource.h"
 
 class EXPORT World : public Object
 {
