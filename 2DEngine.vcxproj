@@ -19,16 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AudioSource.h" />
     <ClInclude Include="CollisionSprite.h" />
     <ClInclude Include="ForceSprite.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AudioSource.cpp" />
     <ClCompile Include="CollisionSprite.cpp" />
     <ClCompile Include="ForceSprite.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D983C489-ACB5-418C-AEC0-5BD10D7A9A30}</ProjectGuid>
@@ -82,12 +86,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\Lucas\Documents\SDL\SDL2_image-2.0.5\include;C:\Users\Lucas\Documents\SDL\SDL2-2.0.10\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Lucas\Documents\SDL\SDL2_image-2.0.5\lib\x86;C:\Users\Lucas\Documents\SDL\SDL2-2.0.10\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Lucas\Documents\SDL\SDL2_mixer-2.0.4\include;C:\Users\Lucas\Documents\SDL\SDL2_image-2.0.5\include;C:\Users\Lucas\Documents\SDL\SDL2-2.0.10\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Lucas\Documents\SDL\SDL2_mixer-2.0.4\lib\x86;C:\Users\Lucas\Documents\SDL\SDL2_image-2.0.5\lib\x86;C:\Users\Lucas\Documents\SDL\SDL2-2.0.10\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Users\Lucas\Documents\SDL\SDL2_image-2.0.5\include;C:\Users\Lucas\Documents\SDL\SDL2-2.0.10\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Lucas\Documents\SDL\SDL2_image-2.0.5\lib\x86;C:\Users\Lucas\Documents\SDL\SDL2-2.0.10\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Lucas\Documents\SDL\SDL2_mixer-2.0.4\include;C:\Users\Lucas\Documents\SDL\SDL2_image-2.0.5\include;C:\Users\Lucas\Documents\SDL\SDL2-2.0.10\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Lucas\Documents\SDL\SDL2_mixer-2.0.4\lib\x86;C:\Users\Lucas\Documents\SDL\SDL2_image-2.0.5\lib\x86;C:\Users\Lucas\Documents\SDL\SDL2-2.0.10\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -98,7 +102,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -121,7 +125,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

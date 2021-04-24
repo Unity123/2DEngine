@@ -1,12 +1,24 @@
 #include "World.h"
 
-
-
-World::World()
+string World::Name()
 {
+	return "World";
 }
 
-
-World::~World()
+void World::Draw()
 {
+	for (Object* pointer : this->children) {
+		if (pointer->Name() != "Object" && pointer->Name() != "AudioSource") {
+			((Sprite*)pointer)->Draw();
+		}
+	}
+}
+
+void World::PhysicsProcess()
+{
+	for (Object* pointer : this->children) {
+		if (pointer->Name() == "ForceSprite") {
+			((ForceSprite*)pointer)->PhysicsProcess();
+		}
+	}
 }

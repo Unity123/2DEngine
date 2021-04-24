@@ -1,0 +1,45 @@
+#include "AudioSource.h"
+
+
+AudioSource::AudioSource(string path, bool isMusic)
+{
+	if (isMusic) {
+		this->music = Mix_LoadMUS(path.c_str);
+	}
+	else {
+		this->chunk = Mix_LoadWAV(path.c_str);
+	}
+	this->isMusic = isMusic;
+}
+
+void AudioSource::Play()
+{
+	if (isMusic) {
+		Mix_PlayMusic(music, 0);
+	}
+	else {
+		Mix_PlayChannel(-1, chunk, 1);
+	}
+}
+
+void AudioSource::Pause()
+{
+	if (isMusic) {
+		if (Mix_PausedMusic()) {
+			Mix_ResumeMusic();
+		}
+		else {
+			Mix_PauseMusic();
+		}
+	}
+}
+
+void AudioSource::Stop()
+{
+	if (isMusic) {
+		Mix_HaltMusic();
+	}
+	else {
+		Mix_HaltChannel(-1);
+	}
+}
