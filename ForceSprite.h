@@ -1,6 +1,6 @@
 #pragma once
 #include "CollisionSprite.h"
-class ForceSprite : public CollisionSprite
+class EXPORT ForceSprite : public CollisionSprite
 {
 public:
 	string Name();

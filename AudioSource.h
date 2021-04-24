@@ -4,10 +4,10 @@
 #include <SDL_mixer.h>
 using namespace std;
 
-class AudioSource : public Object
+class EXPORT AudioSource : public Object
 {
 public:
-	AudioSource(string path, bool isMusic);
+	AudioSource(char* path, bool isMusic);
 	void Play();
 	void Pause();
 	void Stop();

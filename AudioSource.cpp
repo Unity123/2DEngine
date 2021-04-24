@@ -1,13 +1,13 @@
 #include "AudioSource.h"
 
 
-AudioSource::AudioSource(string path, bool isMusic)
+AudioSource::AudioSource(char* path, bool isMusic)
 {
 	if (isMusic) {
-		this->music = Mix_LoadMUS(path.c_str);
+		this->music = Mix_LoadMUS(path);
 	}
 	else {
-		this->chunk = Mix_LoadWAV(path.c_str);
+		this->chunk = Mix_LoadWAV(path);
 	}
 	this->isMusic = isMusic;
 }

@@ -1,7 +1,7 @@
 #pragma once
 #include "ForceSprite.h"
 
-class World : public Object
+class EXPORT World : public Object
 {
 public:
 	string Name();

@@ -3,11 +3,11 @@
 #include <SDL_image.h>
 #include "Object.h"
 using namespace std;
-class Sprite : public Object
+class EXPORT Sprite : public Object
 {
 public:
 	Sprite(SDL_Texture* image, SDL_Renderer* render, SDL_Rect position);
-	Sprite(string path, SDL_Renderer* render, SDL_Rect position);
+	Sprite(char* path, SDL_Renderer* render, SDL_Rect position);
 	~Sprite();
 	string Name();
 	void Draw();

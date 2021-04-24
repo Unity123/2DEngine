@@ -1,7 +1,7 @@
 #pragma once
 #include "Sprite.h"
 
-class CollisionSprite : public Sprite {
+class EXPORT CollisionSprite : public Sprite {
 public:
 	string Name();
 	SDL_Rect boundingBox;
