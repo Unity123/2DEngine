@@ -25,26 +25,44 @@ string CollisionSprite::Name()
 
 bool CollisionSprite::Intersect(CollisionSprite other) {
 	// If one rectangle is on left side of other
-	if (other.boundingBox.x + other.position.x > boundingBox.x + boundingBox.w + position.x || boundingBox.x + position.x > other.boundingBox.x + other.boundingBox.w + other.position.x)
-		return false;
+	//if (other.boundingBox.x + other.position.x >= boundingBox.x + boundingBox.w + position.x || boundingBox.x + position.x >= other.boundingBox.x + other.boundingBox.w + other.position.x)
+	//	return false;
 
 	// If one rectangle is above other
-	if (other.boundingBox.y + other.position.y + other.boundingBox.h < boundingBox.y + position.y || boundingBox.y + position.y < other.boundingBox.y + other.boundingBox.h + other.position.y)
-		return false;
+	//if (other.boundingBox.y + other.position.y + other.boundingBox.h < boundingBox.y + position.y || boundingBox.y + position.y < other.boundingBox.y + other.boundingBox.h + other.position.y)
+	//	return false;
 
-	return true;
+	return this->Intersect(SDL_FRect{ other.boundingBox.x + other.position.x, other.boundingBox.y + other.position.y, other.boundingBox.w, other.boundingBox.h });
 	//return SDL_HasIntersection(&other.boundingBox, new SDL_FRect{ boundingBox.x + position.x, boundingBox.y + position.y, boundingBox.w, boundingBox.h });
 }
 
 bool CollisionSprite::Intersect(SDL_FRect other) {
-	// If one rectangle is on left side of other
-	if (other.x > boundingBox.x + boundingBox.w + position.x || boundingBox.x + position.x > other.x + other.w)
+	float leftOther = other.x;
+	float rightOther = other.x + other.w;
+	float topOther = other.y;
+	float bottomOther = other.y + other.h;
+	float leftThis = boundingBox.x + position.x;
+	float rightThis = boundingBox.x + position.x + boundingBox.w;
+	float topThis = boundingBox.y + position.y;
+	float bottomThis = boundingBox.y + position.y + boundingBox.h;
+	if (bottomThis < topOther)
+	{
 		return false;
+	}
 
-	// If one rectangle is above other
-	if (other.y < boundingBox.y + position.y || boundingBox.y + position.y < other.y + other.h)
+	if (topThis > bottomOther)
+	{
 		return false;
+	}
 
+	if (rightThis < leftOther)
+	{
+		return false;
+	}
+
+	if (leftThis > rightOther)
+	{
+		return false;
+	}
 	return true;
-	//return SDL_HasIntersection(&other, new SDL_FRect{ boundingBox.x + position.x, boundingBox.y + position.y, boundingBox.w, boundingBox.h });
 }

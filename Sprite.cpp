@@ -32,6 +32,6 @@ string Sprite::Name()
 }
 
 void Sprite::Draw() {
-	printf("%i,%i,%i,%i", position.x, position.y, position.w, position.h);
+	//printf("%i,%i,%i,%i", position.x, position.y, position.w, position.h);
 	SDL_RenderCopyExF(rnd, img, NULL, &position, rotation, NULL, flip);
 }

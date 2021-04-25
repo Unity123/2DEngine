@@ -14,11 +14,11 @@ void World::Draw()
 {
 	for (Object* pointer : this->children) {
 		if (dynamic_cast<AudioSource*>(pointer) == nullptr) {
-			printf("yeet\n");
+			//printf("yeet\n");
 			dynamic_cast<Sprite*>(pointer)->Draw();
 			continue;
 		}
-		printf(":(\n");
+		//printf(":(\n");
 	}
 }
 
