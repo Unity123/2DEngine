@@ -2,7 +2,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include "Object.h"
-#include "World.h"
+//#include "World.h"
 using namespace std;
 class EXPORT Sprite : public Object
 {

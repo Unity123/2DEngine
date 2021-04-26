@@ -13,7 +13,7 @@ public:
 	Object();
 	~Object();
 	virtual string Name();
-	vector<Object*> children;
-	Object* parent;
+	vector<Object*> children = vector<Object*>();
+	Object* parent = nullptr;
 };
 

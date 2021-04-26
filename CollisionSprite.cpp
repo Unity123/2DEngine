@@ -31,8 +31,12 @@ bool CollisionSprite::Intersect(CollisionSprite other) {
 	// If one rectangle is above other
 	//if (other.boundingBox.y + other.position.y + other.boundingBox.h < boundingBox.y + position.y || boundingBox.y + position.y < other.boundingBox.y + other.boundingBox.h + other.position.y)
 	//	return false;
-
-	return this->Intersect(SDL_FRect{ other.boundingBox.x + other.position.x, other.boundingBox.y + other.position.y, other.boundingBox.w, other.boundingBox.h });
+	if (other.doesUseRelativePosition) {
+		return this->Intersect(SDL_FRect{ other.boundingBox.x + other.relativePosition.x, other.boundingBox.y + other.relativePosition.y, other.boundingBox.w, other.boundingBox.h });
+	}
+	else {
+		return this->Intersect(SDL_FRect{ other.boundingBox.x + other.position.x, other.boundingBox.y + other.position.y, other.boundingBox.w, other.boundingBox.h });
+	}
 	//return SDL_HasIntersection(&other.boundingBox, new SDL_FRect{ boundingBox.x + position.x, boundingBox.y + position.y, boundingBox.w, boundingBox.h });
 }
 
@@ -41,10 +45,22 @@ bool CollisionSprite::Intersect(SDL_FRect other) {
 	float rightOther = other.x + other.w;
 	float topOther = other.y;
 	float bottomOther = other.y + other.h;
-	float leftThis = boundingBox.x + position.x;
-	float rightThis = boundingBox.x + position.x + boundingBox.w;
-	float topThis = boundingBox.y + position.y;
-	float bottomThis = boundingBox.y + position.y + boundingBox.h;
+	float leftThis = 0;
+	float rightThis = 0;
+	float topThis = 0;
+	float bottomThis = 0;
+	if (doesUseRelativePosition) {
+		leftThis = boundingBox.x + relativePosition.x;
+		rightThis = boundingBox.x + relativePosition.x + boundingBox.w;
+		topThis = boundingBox.y + relativePosition.y;
+		bottomThis = boundingBox.y + relativePosition.y + boundingBox.h;
+	}
+	else {
+		leftThis = boundingBox.x + position.x;
+		rightThis = boundingBox.x + position.x + boundingBox.w;
+		topThis = boundingBox.y + position.y;
+		bottomThis = boundingBox.y + position.y + boundingBox.h;
+	}
 	if (bottomThis < topOther)
 	{
 		return false;
