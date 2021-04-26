@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include "Object.h"
+#include "World.h"
 using namespace std;
 class EXPORT Sprite : public Object
 {
@@ -15,6 +16,8 @@ public:
 	SDL_Texture* img;
 	SDL_Renderer* rnd;
 	SDL_FRect position;
+	SDL_FRect relativePosition;
+	bool doesUseRelativePosition = false;
 	float rotation;
 	SDL_RendererFlip flip;
 };

@@ -15,7 +15,7 @@ AudioSource::AudioSource(char* path, bool isMusic)
 void AudioSource::Play()
 {
 	if (isMusic) {
-		Mix_PlayMusic(music, 0);
+		Mix_PlayMusic(music, -1);
 	}
 	else {
 		Mix_PlayChannel(-1, chunk, 1);

@@ -33,5 +33,11 @@ string Sprite::Name()
 
 void Sprite::Draw() {
 	//printf("%i,%i,%i,%i", position.x, position.y, position.w, position.h);
-	SDL_RenderCopyExF(rnd, img, NULL, &position, rotation, NULL, flip);
+	if (doesUseRelativePosition) {
+		relativePosition = SDL_FRect{ position.x + ((World*)parent)->scrollX, position.y + ((World*)parent)->scrollY, position.w, position.h };
+		SDL_RenderCopyExF(rnd, img, NULL, &relativePosition, rotation, NULL, flip);
+	}
+	else {
+		SDL_RenderCopyExF(rnd, img, NULL, &position, rotation, NULL, flip);
+	}
 }

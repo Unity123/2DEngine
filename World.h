@@ -9,5 +9,7 @@ public:
 	string Name();
 	void Draw();
 	void PhysicsProcess();
+	float scrollX;
+	float scrollY;
 };
 
