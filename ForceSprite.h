@@ -11,6 +11,7 @@ public:
 	float velocityY = 0;
 	bool useGravity = false;
 	void PhysicsProcess();
+	bool isColliding = false;
 private:
 	int frame;
 };

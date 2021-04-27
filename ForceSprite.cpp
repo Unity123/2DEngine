@@ -43,7 +43,11 @@ void ForceSprite::PhysicsProcess()
 				//printf("l");
 				this->position.x -= velocityX;
 				this->position.y -= velocityY;
+				this->isColliding = true;
 				break;
+			}
+			else {
+				this->isColliding = false;
 			}
 		}
 	}

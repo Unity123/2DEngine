@@ -13,7 +13,7 @@ string World::Name()
 void World::Draw()
 {
 	for (Object* pointer : this->children) {
-		if (dynamic_cast<AudioSource*>(pointer) == nullptr) {
+		if (dynamic_cast<Sprite*>(pointer) != nullptr) {
 			//printf("yeet\n");
 			dynamic_cast<Sprite*>(pointer)->Draw();
 			continue;
